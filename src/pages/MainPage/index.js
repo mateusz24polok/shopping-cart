@@ -1,9 +1,12 @@
 import React from "react";
 import { StyledWrapper } from "./styled";
+import Header from "../../organisms/Header";
 
 const MainPage = () => {
     return (
-        <StyledWrapper>Main Page</StyledWrapper>
+        <StyledWrapper>
+            <Header />
+        </StyledWrapper>
     );
 };
 
