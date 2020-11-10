@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import XIcon from "../../assets/images/x-img.png";
 
 export const Section = styled.section`
     display: grid;
@@ -35,7 +34,7 @@ export const ProductQuantityTitle = styled.p.attrs({ className: "ProductQuantity
 
 export const FirstBreakingLine = styled.div.attrs({ className: "FirstBreakingLine" })`
     grid-area: FirstBreakingLine;
-    color: ${({ theme }) => theme.colors.AthensGray};
+    background-color: ${({ theme }) => theme.colors.AthensGray};
     font-weight: 700;
     margin-bottom: 50px;
     height: 2px;
@@ -43,19 +42,10 @@ export const FirstBreakingLine = styled.div.attrs({ className: "FirstBreakingLin
 
 export const SecondBreakingLine = styled.div.attrs({ className: "SecondBreakingLine" })`
     grid-area: SecondBreakingLine;
-    color: ${({ theme }) => theme.colors.AthensGray};
+    background-color: ${({ theme }) => theme.colors.AthensGray};
     font-weight: 700;
     margin-top: 50px;
     height: 2px;
-`;
-
-export const RemoveButton = styled.button.attrs({ className: "RemoveButton" })`
-    grid-area: RemoveButton;
-    background: url(${XIcon});
-    background-repeat: no-repeat;
-    background-position: left center;
-    border: none;
-    cursor: pointer;
 `;
 
 export const ProductPicture = styled.img.attrs({ className: "ProductPicture" })`
@@ -84,26 +74,3 @@ export const UpdateButton = styled.button.attrs({ className: "UpdateButton" })`
     cursor: pointer;
     padding: 10px 0;
 `;
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .productSection__quantityCounter__editButton {
-//     background: url("./images/edit-img.png");
-//     background - repeat: no - repeat;
-//     background - position: center;
-//     width: 30px;
-//     height: 30px;
-//     border: none;
-//     cursor: pointer;
-// }
-

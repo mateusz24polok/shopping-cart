@@ -6,7 +6,6 @@ import {
     ProductQuantityTitle,
     FirstBreakingLine,
     SecondBreakingLine,
-    RemoveButton,
     ProductPicture,
     ProductTitle,
     ProductPrice,
