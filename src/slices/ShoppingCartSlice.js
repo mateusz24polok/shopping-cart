@@ -6,11 +6,11 @@ const ShoppingCartSlice = createSlice({
     initialState: {
         items: [
             {
-                name: "Headphonse",
+                name: "Headphones",
                 id: nanoid(),
                 price: 11.90,
-                quantity: 2,
-                image: { Headphones },
+                quantity: 3,
+                image: `${Headphones}`,
             }
         ],
         summary: {
@@ -19,18 +19,28 @@ const ShoppingCartSlice = createSlice({
         }
     },
     reducers: {
-        addItemQuantity: (state, action) => {
-            if (state.items.headphones.quantity > 0) {
-                state.items.headphones.quantity++;
+        increaseItemQuantity: (state, { payload: id }) => {
+            if (state.items.filter(item => id === item.id)[0].quantity <= 999)
+                state.items.filter(item => id === item.id)[0].quantity++;
+        },
+
+        decreaseItemQuantity: (state, { payload: id }) => {
+            if (state.items.filter(item => id === item.id)[0].quantity > 0) {
+                state.items.filter(item => id === item.id)[0].quantity--
             }
+        },
+
+        removeItem: (state, { payload: id }) => {
+            state.items = state.items.filter(item => id !== item.id);
         }
     },
 });
 
 export const selectShoppingCartState = state => state.ShoppingCart;
 export const selectShoppingCartItems = state => selectShoppingCartState(state).items;
-export const selectShoppingCartSummary = state => selectShoppingCartSummary(state).summary;
+export const selectShoppingCartSummary = state => selectShoppingCartState(state).summary;
+export const selectShoppingCartItemById = (state, id) => selectShoppingCartItems(state).filter(item => id === item.id);
 
-export const { addItemQuantity } = ShoppingCartSlice.actions;
+export const { increaseItemQuantity, decreaseItemQuantity, removeItem } = ShoppingCartSlice.actions;
 
 export default ShoppingCartSlice.reducer;
