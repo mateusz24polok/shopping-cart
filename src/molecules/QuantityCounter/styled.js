@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-export const StyledWrapper = styled.div.attrs({ className: "QuantityCounter" })`
-    grid-area: QuantityCounter;
+export const StyledWrapper = styled.div`
     display: flex;
     align-self: center;
     grid-column: 5 / 6;

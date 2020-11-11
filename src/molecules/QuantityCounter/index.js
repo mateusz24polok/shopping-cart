@@ -3,7 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import CounterButton from "../../components/CounterButton";
 import IconButton from "../../components/IconButton/"
 import { StyledWrapper, CounterOutput } from "./styled";
-import { selectShoppingCartItemById, increaseItemQuantity, decreaseItemQuantity, shoppingCartSummarize } from "../../slices/ShoppingCartSlice";
+import {
+    selectShoppingCartItemById,
+    increaseItemQuantity,
+    decreaseItemQuantity,
+    shoppingCartSummarize
+} from "../../slices/ShoppingCartSlice";
 import EditIcon from "../../assets/images/edit-img.png";
 
 const QuantityCounter = ({ id }) => {

@@ -68,7 +68,6 @@ export const ProductSection = () => {
                     <IconButton
                         onClick={() => { removeItemHandler(item.id) }}
                         image={XIcon}
-                        gridArea="RemoveButton"
                         width="30px"
                         height="30px"
                         gridVerticalCenter
@@ -79,7 +78,7 @@ export const ProductSection = () => {
                     <QuantityCounter id={item.id} />
                 </GridSection>
             ))}
-            
+
             <SecondBreakingLine />
             <GridSection>
                 <AddButton onClick={addComputerHandler}>Add Computer</AddButton>

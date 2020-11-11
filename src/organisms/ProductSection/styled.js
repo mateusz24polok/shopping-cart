@@ -9,6 +9,7 @@ export const Section = styled.section`
 
     @media(max-width: ${({ theme }) => theme.breakPoints.tabletBreak}){
         margin: 0 auto 30px;
+        padding: 0;
     }
 `;
 
