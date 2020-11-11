@@ -52,7 +52,19 @@ const ShoppingCartSlice = createSlice({
             state.summary.shipping = 0;
             state.summary.subtotal = 0;
             state.summary.grandTotal = 0;
-        }
+        },
+
+        shoppingCartReset: state => {
+            state.items = [];
+        },
+
+        openModal: state => {
+            state.isCheckoutOpen = true;
+        },
+
+        closeModal: state => {
+            state.isCheckoutOpen = false;
+        },
 
     },
 });
@@ -64,7 +76,15 @@ export const selectShoppingCartItemById = (state, id) => selectShoppingCartItems
 export const selectSummmaryShipping = state => selectShoppingCartSummary(state).shipping;
 export const selectSummmarySubtotal = state => selectShoppingCartSummary(state).subtotal;
 export const selectSummmaryGrandTotal = state => selectShoppingCartSummary(state).grandTotal;
+export const selectCheckoutOpen = state => selectShoppingCartState(state).isCheckoutOpen;
 
-export const { increaseItemQuantity, decreaseItemQuantity, removeItem, shoppingCartSummarize, summarizeReset } = ShoppingCartSlice.actions;
+export const { increaseItemQuantity,
+    decreaseItemQuantity,
+    removeItem,
+    shoppingCartSummarize,
+    summarizeReset,
+    openModal,
+    closeModal,
+    shoppingCartReset } = ShoppingCartSlice.actions;
 
 export default ShoppingCartSlice.reducer;

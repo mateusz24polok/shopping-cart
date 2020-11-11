@@ -7,4 +7,8 @@ export const StyledWrapper = styled.div`
 
 export const Main = styled.main`
     display: flex;
+
+    @media(max-width:660px){
+        flex-wrap: wrap;
+    }
 `;

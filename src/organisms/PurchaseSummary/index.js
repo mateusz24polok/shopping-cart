@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
     ShippingSummary,
     ShippingSummaryTitle,
@@ -14,15 +14,30 @@ import {
     TotalCartsDetailsGrandTotalPrice
 } from "./styled";
 import PrimaryButton from "../../components/PrimaryButton";
-import { selectSummmaryShipping, selectSummmarySubtotal, selectSummmaryGrandTotal } from "../../slices/ShoppingCartSlice";
+import {
+    selectSummmaryShipping,
+    selectSummmarySubtotal,
+    selectSummmaryGrandTotal,
+    openModal,
+} from "../../slices/ShoppingCartSlice";
 
 const PurchaseSummary = () => {
+
+    // Take dispatch from react-redux
+
+    const dispatch = useDispatch();
 
     // Take summary state variables from redux store
 
     const summaryShipping = useSelector(selectSummmaryShipping);
     const summarySubtotal = useSelector(selectSummmarySubtotal);
     const summaryGrandTotal = useSelector(selectSummmaryGrandTotal);
+
+    // Function for handle Modal Open - only open the Modal, clear shopping cart and summarize section will be after modal close
+
+    const handleModalOpen = () => {
+        dispatch(openModal());
+    }
 
     return (
         <aside>
@@ -41,7 +56,7 @@ const PurchaseSummary = () => {
                         <TotalCartsDetailsGrandTotalTitle>Grand Total</TotalCartsDetailsGrandTotalTitle>
                         <TotalCartsDetailsGrandTotalPrice>{summaryGrandTotal.toFixed(2)}</TotalCartsDetailsGrandTotalPrice>
                     </TotalCartsDetailsGrandTotal>
-                    <PrimaryButton>Proceed to checkout</PrimaryButton>
+                    <PrimaryButton onClick={handleModalOpen}>Proceed to checkout</PrimaryButton>
                 </TotalCartsDetails>
             </div>
         </aside>
