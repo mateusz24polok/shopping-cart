@@ -18,6 +18,11 @@ export const Modal = styled.div`
     width: 30%;
     height: 40%;
     background-color: white;
+
+    @media(max-width: ${({ theme }) => theme.breakPoints.tabletBreak}){
+        width: 60%;
+        height: 30%;
+    }
 `;
 
 export const Message = styled.h2`

@@ -16,8 +16,7 @@ export const Section = styled.section`
     box-shadow: 1px 1px 7px -2px ${({ theme }) => theme.colors.AthensGray};
 
     @media(max-width: ${({ theme }) => theme.breakPoints.tabletBreak}){
-        margin-bottom: 30px;
-        margin: 0 auto;
+        margin: 0 auto 30px;
     }
 `;
 
