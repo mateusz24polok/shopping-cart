@@ -68,7 +68,12 @@ const ShoppingCartSlice = createSlice({
         },
 
         addItem: (state, { payload: item }) => {
-            state.items.push(item);
+            const isTheSameProductInCart = state.items.some(product => product.id === item.id);
+            if (!isTheSameProductInCart) {
+                state.items.push(item);
+            } else {
+                alert("You can't add second the same product to Shopping Cart. Please raise up quantity of the existing one in Cart");
+            };
         },
 
     },

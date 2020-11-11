@@ -11,13 +11,16 @@ export const ModalWrapper = styled.div`
 `;
 
 export const Modal = styled.div`
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 30%;
     height: 40%;
-    background-color: white;
+    background-color: ${({theme})=>theme.colors.AthensGray};
+    box-shadow: 1px 1px 7px -2px ${({ theme }) => theme.colors.Snuff};
 
     @media(max-width: ${({ theme }) => theme.breakPoints.tabletBreak}){
         width: 60%;
@@ -26,16 +29,12 @@ export const Modal = styled.div`
 `;
 
 export const Message = styled.h2`
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    grid-row: 2 / 3;
     text-align: center;
+    letter-spacing: 1px;
 `;
 
 export const StyledIconButton = styled(IconButton)`
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    grid-row: 1 / 2;
 `;
 
