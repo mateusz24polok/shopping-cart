@@ -17,7 +17,9 @@ const ShoppingCartSlice = createSlice({
             shipping: 23.80,
             subtotal: 23.80,
             grandTotal: 47.60,
-        }
+        },
+
+        isCheckoutOpen: false,
     },
     reducers: {
         increaseItemQuantity: (state, { payload: id }) => {
