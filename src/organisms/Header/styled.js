@@ -5,6 +5,10 @@ export const StyledWrapper = styled.header`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+
+    @media(max-width: ${({ theme }) => theme.breakPoints.mobileBreak}){
+        flex-direction: column;
+    }
 `;
 
 export const Title = styled.h3`

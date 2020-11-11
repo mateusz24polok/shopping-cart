@@ -37,7 +37,7 @@ const PurchaseSummary = () => {
 
     const handleModalOpen = () => {
         dispatch(openModal());
-    }
+    };
 
     return (
         <aside>

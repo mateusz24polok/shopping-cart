@@ -10,5 +10,10 @@ export const StyledButton = styled.button`
     border: none;
     cursor: pointer;
     align-self: ${({ gridVerticalCenter }) => gridVerticalCenter && "center"};
+
+    @media(max-width: ${({ theme }) => theme.breakPoints.mobileBreak}){
+        height: 20px;
+        width: 20px;
+    }
 `;
 

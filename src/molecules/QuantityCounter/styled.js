@@ -14,5 +14,12 @@ export const CounterOutput = styled.output`
     justify-content: center;
     border: 1px solid black;
     color: ${({ theme }) => theme.colors.AthensGray};
+
+    @media(max-width: ${({ theme }) => theme.breakPoints.mobileBreak}){
+        font-size: 10px;
+        height: 20px;
+        width: 20px;
+    }
+
 `;
 

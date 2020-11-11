@@ -11,6 +11,12 @@ export const StyledButton = styled.button`
     cursor: pointer;
     transition: background-color 0.15s linear;
 
+    @media(max-width: ${({ theme }) => theme.breakPoints.mobileBreak}){
+        font-size: 10px;
+        height: 20px;
+        width: 20px;
+    }
+
     &:hover{
         background-color: ${({ theme }) => theme.colors.Whisper};
     }

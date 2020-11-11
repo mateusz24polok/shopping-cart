@@ -6,5 +6,10 @@ export const theme = {
         PrimaryButtonBackground: "#000000",
         PrimaryButtonFont: "#FFFFFF",
         PrimaryButtonHover: "#3D3D3D",
+    },
+
+    breakPoints: {
+        tabletBreak: "830px",
+        mobileBreak: "530px",
     }
 };

@@ -8,7 +8,8 @@ export const StyledWrapper = styled.div`
 export const Main = styled.main`
     display: flex;
 
-    @media(max-width:660px){
+    @media(max-width: ${({ theme }) => theme.breakPoints.tabletBreak}){
+        justify-content: center;
         flex-wrap: wrap;
     }
 `;
