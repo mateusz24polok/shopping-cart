@@ -107,6 +107,7 @@ export const UpdateButton = styled.button`
 
     @media(max-width: ${({ theme }) => theme.breakPoints.mobileBreak}){
         font-size: 10px;
+        margin-right: 10px;
     }
 
     &:hover{

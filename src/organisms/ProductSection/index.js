@@ -64,7 +64,7 @@ export const ProductSection = () => {
             <FirstBreakingLine />
 
             {items && items.map(item => (
-                <GridSection>
+                <GridSection key={item.id}>
                     <IconButton
                         onClick={() => { removeItemHandler(item.id) }}
                         image={XIcon}
@@ -72,7 +72,7 @@ export const ProductSection = () => {
                         height="30px"
                         gridVerticalCenter
                     />
-                    <ProductPicture src={item.image} />
+                    <ProductPicture alt={item.name} src={item.image} />
                     <ProductTitle>{item.name}</ProductTitle>
                     <ProductPrice>{`$${item.price}`}</ProductPrice>
                     <QuantityCounter id={item.id} />
