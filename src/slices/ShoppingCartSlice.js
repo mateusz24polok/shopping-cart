@@ -1,19 +1,10 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
-import Headphones from "../assets/images/headphones.png";
+import { createSlice } from "@reduxjs/toolkit";
+import { Headphones } from "../assets/data/exampleProducts";
 
 const ShoppingCartSlice = createSlice({
     name: "ShoppingCart",
     initialState: {
-        items: [
-            {
-                name: "Headphones",
-                id: nanoid(),
-                price: 11.90,
-                quantity: 2,
-                image: `${Headphones}`,
-            },
-
-        ],
+        items: [Headphones],
         summary: {
             shipping: 23.80,
             subtotal: 23.80,

@@ -1,19 +1,18 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { computer } from "../../assets/data/exampleProducts";
+import { computer, Headphones } from "../../assets/data/exampleProducts";
 import {
     Section,
     ProductNameTitle,
     ProductUnitTitle,
     ProductQuantityTitle,
-    FirstBreakingLine,
-    SecondBreakingLine,
     ProductPicture,
     ProductTitle,
     ProductPrice,
     UpdateButton,
     GridSection,
     AddButton,
+    BasicBreakingLine
 } from "./styled";
 import QuantityCounter from "../../molecules/QuantityCounter";
 import IconButton from "../../components/IconButton";
@@ -54,6 +53,13 @@ export const ProductSection = () => {
         dispatch(shoppingCartSummarize());
     }
 
+    //Add Headphones Function
+
+    const addHeadphonesHandler = () => {
+        dispatch(addItem(Headphones));
+        dispatch(shoppingCartSummarize());
+    }
+
     return (
         <Section>
             <GridSection>
@@ -61,7 +67,7 @@ export const ProductSection = () => {
                 <ProductUnitTitle>Unit Price</ProductUnitTitle>
                 <ProductQuantityTitle>Qty</ProductQuantityTitle>
             </GridSection>
-            <FirstBreakingLine />
+            <BasicBreakingLine marginBottom />
 
             {items && items.map(item => (
                 <GridSection key={item.id}>
@@ -79,9 +85,10 @@ export const ProductSection = () => {
                 </GridSection>
             ))}
 
-            <SecondBreakingLine />
+            <BasicBreakingLine marginTop />
             <GridSection>
                 <AddButton onClick={addComputerHandler}>Add Computer</AddButton>
+                <AddButton onClick={addHeadphonesHandler}>Add Headphones</AddButton>
                 <UpdateButton onClick={updateButtonHandler}>Update Shopping Cart</UpdateButton>
             </GridSection>
         </Section>

@@ -54,17 +54,11 @@ export const ProductQuantityTitle = styled(StyledHeaderText)`
     grid-column: 5 / 6;
 `;
 
-export const FirstBreakingLine = styled.div`
+export const BasicBreakingLine = styled.div`
     background-color: ${({ theme }) => theme.colors.AthensGray};
     font-weight: 700;
-    margin-bottom: 50px;
-    height: 2px;
-`;
-
-export const SecondBreakingLine = styled.div`
-    background-color: ${({ theme }) => theme.colors.AthensGray};
-    font-weight: 700;
-    margin-top: 50px;
+    margin-top: ${({ marginTop }) => marginTop ? "50px" : "10px"};
+    margin-bottom: ${({ marginBottom }) => marginBottom ? "50px" : "10px"};
     height: 2px;
 `;
 
