@@ -14,15 +14,34 @@ import {
 } from "./styled";
 import QuantityCounter from "../../molecules/QuantityCounter";
 import IconButton from "../../components/IconButton";
-import { selectShoppingCartItems, removeItem } from "../../slices/ShoppingCartSlice";
+import { selectShoppingCartItems, removeItem, shoppingCartSummarize, summarizeReset } from "../../slices/ShoppingCartSlice";
 import XIcon from "../../assets/images/x-img.png";
 
 export const ProductSection = () => {
+
+    // This is main component of chosen product and its details like price and quantity
+    // Product is rednder with map funciton on the base of redux state
+    // Here are also funtions and functionality of remove this item and update whole Shopping Cart
+
+    //Take dispatch from react-redux
+
     const dispatch = useDispatch();
+
+    //Take array of items from redux state
+
     const items = useSelector(selectShoppingCartItems);
+
+    //Function which firstly removeItem on the base of specific ID and then reset values of Shopping Cart
 
     const removeItemHandler = id => {
         dispatch(removeItem(id));
+        dispatch(summarizeReset());
+    }
+
+    //Refresh values of Shopping Cart
+
+    const updateButtonHandler = () => {
+        dispatch(shoppingCartSummarize());
     }
 
     return (
@@ -46,7 +65,7 @@ export const ProductSection = () => {
                     <SecondBreakingLine />
                 </>
             ))}
-            <UpdateButton>Update Shopping Cart</UpdateButton>
+            <UpdateButton onClick={updateButtonHandler}>Update Shopping Cart</UpdateButton>
         </Section>
     );
 };

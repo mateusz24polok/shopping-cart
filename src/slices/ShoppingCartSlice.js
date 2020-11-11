@@ -9,13 +9,14 @@ const ShoppingCartSlice = createSlice({
                 name: "Headphones",
                 id: nanoid(),
                 price: 11.90,
-                quantity: 3,
+                quantity: 2,
                 image: `${Headphones}`,
-            }
+            },
         ],
         summary: {
-            shipping: null,
-            subtotal: null,
+            shipping: 23.80,
+            subtotal: 23.80,
+            grandTotal: 47.60,
         }
     },
     reducers: {
@@ -32,7 +33,25 @@ const ShoppingCartSlice = createSlice({
 
         removeItem: (state, { payload: id }) => {
             state.items = state.items.filter(item => id !== item.id);
+        },
+
+        shoppingCartSummarize: state => {
+            const totalPrice = state.items.reduce((accumulator, currentValue) => {
+                return accumulator + (currentValue.price * currentValue.quantity)
+            }, 0);
+
+            const shippingPrice = (totalPrice > 100 || totalPrice === 0) ? 0 : 23.80;
+            state.summary.shipping = shippingPrice;
+            state.summary.subtotal = totalPrice;
+            state.summary.grandTotal = totalPrice + shippingPrice;
+        },
+
+        summarizeReset: state => {
+            state.summary.shipping = 0;
+            state.summary.subtotal = 0;
+            state.summary.grandTotal = 0;
         }
+
     },
 });
 
@@ -40,7 +59,10 @@ export const selectShoppingCartState = state => state.ShoppingCart;
 export const selectShoppingCartItems = state => selectShoppingCartState(state).items;
 export const selectShoppingCartSummary = state => selectShoppingCartState(state).summary;
 export const selectShoppingCartItemById = (state, id) => selectShoppingCartItems(state).filter(item => id === item.id);
+export const selectSummmaryShipping = state => selectShoppingCartSummary(state).shipping;
+export const selectSummmarySubtotal = state => selectShoppingCartSummary(state).subtotal;
+export const selectSummmaryGrandTotal = state => selectShoppingCartSummary(state).grandTotal;
 
-export const { increaseItemQuantity, decreaseItemQuantity, removeItem } = ShoppingCartSlice.actions;
+export const { increaseItemQuantity, decreaseItemQuantity, removeItem, shoppingCartSummarize, summarizeReset } = ShoppingCartSlice.actions;
 
 export default ShoppingCartSlice.reducer;
