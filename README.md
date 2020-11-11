@@ -1,6 +1,57 @@
-# Getting Started with Create React App
+# Simple Shopping Cart
 
+This is a simple shopping cart for single product, where you can choose quantity of this product and summarize your order.
+
+![Logo](public/appLogo.png)
+
+### Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Live Demo
+https://mateusz24polok.github.io/shopping-cart/
+
+# Instructions how to use
+1. Choose quantity of your product
+2. Click for pencil icon or "Update Shopping Cart" button to summarize your order 
+3. Click "Proceed to checkout button" to submit your order
+
+<!-- ![SampleGIF](place for sample gif) -->
+
+# Technologies
+## Technologies used in project:
+
+<br>
+
+![HTML Icon](readmeImages/html.png)
+
+ HTML
+
+![CSS Icon](readmeImages/css.png)
+
+ CSS
+
+![JavaScript Icon](readmeImages/js.png)
+
+ JavaScript ES6+
+
+![React JS Icon](readmeImages/react.png) 
+
+React.js with create-react-app
+
+![Redux Icon](readmeImages/redux.png)
+
+ Redux with react-redux
+
+![Styled Components Icon](readmeImages/styled-components.png)
+
+ Styled Components
+
+<br>
+
+# Author and contact
+- author: Mateusz Polok
+- email: mateusz24polok@gmail.com
+- phone: +48535731868
 
 ## Available Scripts
 
@@ -38,33 +89,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
