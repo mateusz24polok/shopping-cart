@@ -6,4 +6,9 @@ export const StyledButton = styled.button`
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    transition: background-color 0.15s linear;
+
+    &:hover{
+        background-color: ${({ theme }) => theme.colors.PrimaryButtonHover}
+    }
 `;

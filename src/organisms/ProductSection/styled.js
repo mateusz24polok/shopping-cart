@@ -68,10 +68,15 @@ export const ProductPrice = styled.p.attrs({ className: "ProductPrice" })`
 
 export const UpdateButton = styled.button.attrs({ className: "UpdateButton" })`
     grid-area: UpdateButton;
-    color: white;
-    background-color: black;
+    color: ${({ theme }) => theme.colors.PrimaryButtonFont};
+    background-color: ${({ theme }) => theme.colors.PrimaryButtonBackground};
     margin: 10px 0 20px;
     border: none;
     cursor: pointer;
     padding: 10px 0;
+    transition: background-color 0.15s linear;
+
+    &:hover{
+        background-color: ${({ theme }) => theme.colors.PrimaryButtonHover}
+    }
 `;

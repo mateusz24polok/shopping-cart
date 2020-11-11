@@ -5,5 +5,6 @@ export const theme = {
         Whisper: "#F3EDF5",
         PrimaryButtonBackground: "#000000",
         PrimaryButtonFont: "#FFFFFF",
+        PrimaryButtonHover: "#3D3D3D",
     }
 };
