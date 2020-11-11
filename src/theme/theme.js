@@ -9,7 +9,8 @@ export const theme = {
     },
 
     breakPoints: {
-        tabletBreak: "830px",
-        mobileBreak: "530px",
+        tabletBreak: "1000px",
+        firstGridBreak: "800px",
+        mobileBreak: "560px",
     }
 };

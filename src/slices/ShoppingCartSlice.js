@@ -12,6 +12,7 @@ const ShoppingCartSlice = createSlice({
                 quantity: 2,
                 image: `${Headphones}`,
             },
+
         ],
         summary: {
             shipping: 23.80,
@@ -66,6 +67,10 @@ const ShoppingCartSlice = createSlice({
             state.isCheckoutOpen = false;
         },
 
+        addItem: (state, { payload: item }) => {
+            state.items.push(item);
+        },
+
     },
 });
 
@@ -85,6 +90,7 @@ export const { increaseItemQuantity,
     summarizeReset,
     openModal,
     closeModal,
-    shoppingCartReset } = ShoppingCartSlice.actions;
+    shoppingCartReset,
+    addItem } = ShoppingCartSlice.actions;
 
 export default ShoppingCartSlice.reducer;

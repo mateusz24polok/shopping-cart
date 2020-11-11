@@ -4,6 +4,8 @@ export const StyledWrapper = styled.div.attrs({ className: "QuantityCounter" })`
     grid-area: QuantityCounter;
     display: flex;
     align-self: center;
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
 `;
 
 export const CounterOutput = styled.output`

@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { computer } from "../../assets/data/exampleProducts";
 import {
     Section,
     ProductNameTitle,
@@ -11,10 +12,12 @@ import {
     ProductTitle,
     ProductPrice,
     UpdateButton,
+    GridSection,
+    AddButton,
 } from "./styled";
 import QuantityCounter from "../../molecules/QuantityCounter";
 import IconButton from "../../components/IconButton";
-import { selectShoppingCartItems, removeItem, shoppingCartSummarize, summarizeReset } from "../../slices/ShoppingCartSlice";
+import { selectShoppingCartItems, removeItem, shoppingCartSummarize, addItem } from "../../slices/ShoppingCartSlice";
 import XIcon from "../../assets/images/x-img.png";
 
 export const ProductSection = () => {
@@ -35,23 +38,33 @@ export const ProductSection = () => {
 
     const removeItemHandler = id => {
         dispatch(removeItem(id));
-        dispatch(summarizeReset());
-    }
+        dispatch(shoppingCartSummarize());
+    };
 
     //Refresh values of Shopping Cart
 
     const updateButtonHandler = () => {
         dispatch(shoppingCartSummarize());
+    };
+
+    //Add Computer Function
+
+    const addComputerHandler = () => {
+        dispatch(addItem(computer));
+        dispatch(shoppingCartSummarize());
     }
 
     return (
         <Section>
-            <ProductNameTitle>Product Name</ProductNameTitle>
-            <ProductUnitTitle>Unit Price</ProductUnitTitle>
-            <ProductQuantityTitle>Qty</ProductQuantityTitle>
+            <GridSection>
+                <ProductNameTitle>Product Name</ProductNameTitle>
+                <ProductUnitTitle>Unit Price</ProductUnitTitle>
+                <ProductQuantityTitle>Qty</ProductQuantityTitle>
+            </GridSection>
             <FirstBreakingLine />
+
             {items && items.map(item => (
-                <>
+                <GridSection>
                     <IconButton
                         onClick={() => { removeItemHandler(item.id) }}
                         image={XIcon}
@@ -64,10 +77,14 @@ export const ProductSection = () => {
                     <ProductTitle>{item.name}</ProductTitle>
                     <ProductPrice>{`$${item.price}`}</ProductPrice>
                     <QuantityCounter id={item.id} />
-                    <SecondBreakingLine />
-                </>
+                </GridSection>
             ))}
-            <UpdateButton onClick={updateButtonHandler}>Update Shopping Cart</UpdateButton>
+            
+            <SecondBreakingLine />
+            <GridSection>
+                <AddButton onClick={addComputerHandler}>Add Computer</AddButton>
+                <UpdateButton onClick={updateButtonHandler}>Update Shopping Cart</UpdateButton>
+            </GridSection>
         </Section>
     );
 };
