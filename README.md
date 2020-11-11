@@ -5,55 +5,68 @@ This is a simple shopping cart for single product, where you can choose quantity
 ![Logo](public/appLogo.png)
 
 ### Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Live Demo
+
 https://mateusz24polok.github.io/shopping-cart/
 
 # Instructions how to use
+
 1. Choose quantity of your product
-2. Click for pencil icon or "Update Shopping Cart" button to summarize your order 
+2. Click for pencil icon or "Update Shopping Cart" button to summarize your order
 3. Click "Proceed to checkout button" to submit your order
 
-<!-- ![SampleGIF](place for sample gif) -->
+<br>
+
+# Example of use
+
+![SampleGIF](public/ShoppingCartExample.gif)
+
+<br>
 
 # Technologies
+
 ## Technologies used in project:
 
 <br>
 
 ![HTML Icon](readmeImages/html.png)
 
- HTML
+HTML
 
 ![CSS Icon](readmeImages/css.png)
 
- CSS
+CSS
 
 ![JavaScript Icon](readmeImages/js.png)
 
- JavaScript ES6+
+JavaScript ES6+
 
-![React JS Icon](readmeImages/react.png) 
+![React JS Icon](readmeImages/react.png)
 
 React.js with create-react-app
 
 ![Redux Icon](readmeImages/redux.png)
 
- Redux with react-redux
+Redux with react-redux
 
 ![Styled Components Icon](readmeImages/styled-components.png)
 
- Styled Components
+Styled Components
 
 <br>
 
 # Author and contact
+
 - author: Mateusz Polok
 - email: mateusz24polok@gmail.com
 - phone: +48535731868
 
-## Available Scripts
+<br>
+
+# Available Scripts
 
 In the project directory, you can run:
 
