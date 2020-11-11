@@ -10,7 +10,7 @@ import {
     ProductPicture,
     ProductTitle,
     ProductPrice,
-    UpdateButton
+    UpdateButton,
 } from "./styled";
 import QuantityCounter from "../../molecules/QuantityCounter";
 import IconButton from "../../components/IconButton";
@@ -55,8 +55,10 @@ export const ProductSection = () => {
                     <IconButton
                         onClick={() => { removeItemHandler(item.id) }}
                         image={XIcon}
-                        xPosition="left"
                         gridArea="RemoveButton"
+                        width="30px"
+                        height="30px"
+                        gridVerticalCenter
                     />
                     <ProductPicture src={item.image} />
                     <ProductTitle>{item.name}</ProductTitle>

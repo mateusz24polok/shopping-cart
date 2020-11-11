@@ -8,6 +8,7 @@ export const Section = styled.section`
      "SecondBreakingLine SecondBreakingLine SecondBreakingLine SecondBreakingLine SecondBreakingLine" 
      ". . . . UpdateButton";
     padding: 30px;
+    /* grid-template-columns: repeat(5, 1fr); */
     margin-right: 20px;
     flex-shrink: 1;
     flex-grow: 1;
